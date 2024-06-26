@@ -52,3 +52,10 @@ test-and-up:
 
 test-and-build:
 	pytest app/tests/ && make up-build
+
+setup-and-run:
+	pip install -r requirements/base.txt
+	python app/main.py
+
+venv:
+	python3 -m venv venv
