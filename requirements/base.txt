@@ -1,0 +1,11 @@
+fastapi
+pillow
+python-dotenv
+uvicorn[standard]
+passlib
+ujson
+nltk
+pytest
+pytest-asyncio
+pytest-cov
+numpy

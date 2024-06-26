@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  nginx:
+    container_name: auto-nginx
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/app
+    depends_on:
+      - backend
+    networks:
+      - test-network
+
+  backend:
+    container_name: auto-backend
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: 'sh -c "python app/main.py --host 0.0.0.0 --port 8000"'
+    networks:
+      - test-network
+
+
+networks:
+  test-network:
