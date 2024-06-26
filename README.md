@@ -7,6 +7,12 @@ Clone this repository:
 git clone git@github.com:OleksandrYanchar/nltk-test.git
 ```
     
+### Optionaly:
+
+###### setup logs dir in  .env
+
+---
+
 ## Build and run docker app:
 
 
@@ -31,7 +37,7 @@ make test-and-build:
 ```bash
 make test-and-up:
 ```
-
+---
 
 # Setup and run app: 
 
@@ -74,6 +80,7 @@ make run
 make test-and-run
 ```
 
+---
 
 # Project Links
 
