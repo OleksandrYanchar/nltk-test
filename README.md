@@ -78,9 +78,9 @@ make test-and-run
 # Project Links
 
 ## Swagger:
-- [swagger](localhost/api/docs/)
+- [swagger](http://localhost/api/docs/)
 
 #### or without nginx: 
 
-- [swagger](    )
+- [swagger](http://localhost:8000/api/docs/)
 
