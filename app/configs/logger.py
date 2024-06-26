@@ -6,9 +6,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+LOG_DIR = os.getenv('LOG_DIR',  'logs')
+os.makedirs(LOG_DIR, exist_ok=True)
+
 # Create log directories if they do not exist
-LOG_DIR_GENERAL = os.getenv("LOG_DIR_GENERAL", "logs/general")
-LOG_DIR_ERRORS = os.getenv("LOG_DIR_ERRORS", "logs/errors")
+LOG_DIR_GENERAL = os.getenv("LOG_DIR_GENERAL", f"{LOG_DIR}/general")
+LOG_DIR_ERRORS = os.getenv("LOG_DIR_ERRORS", f"{LOG_DIR}/errors")
 
 os.makedirs(LOG_DIR_GENERAL, exist_ok=True)
 os.makedirs(LOG_DIR_ERRORS, exist_ok=True)
